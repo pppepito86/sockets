@@ -69,12 +69,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 				if (StompCommand.CONNECT == accessor.getCommand()) {
 					String username = accessor.getLogin();
 //	              String password = accessor.getPasscode();
-					accessor.setUser(new Principal() {
-						@Override
-						public String getName() {
-							return username;
-						}
-					});
+					if (username != null) {
+						accessor.setUser(new Principal() {
+							@Override
+							public String getName() {
+								return username;
+							}
+						});
+					}
 				}
 				return message;
 			}
