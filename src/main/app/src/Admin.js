@@ -41,7 +41,7 @@ function SubscribingComponent() {
       <h1>Active Users:</h1>
       {users.filter(u => u !== 'admin').map((u) => <h3 key={u}>{u} - {answers[u]}</h3>)}
 
-      <button onClick={() => sendQuestion('start', 'Трябва да слушаш, за да го разбереш!')}>
+      <button onClick={() => sendQuestion('start', 'Трябва да слушаш, за да го чуеш!')}>
         Send question
       </button>
       <button onClick={() => sendQuestion('stop', 'n/a')}>

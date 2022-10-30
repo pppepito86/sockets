@@ -35,8 +35,8 @@ public class SocketController {
     @MessageMapping("/question/stop")
     @SendTo("/topic/questions")
     public Question stopQuestion(Principal principal, String message) {
-    	LOG.info("Question stopped [user={}, question={}]", principal.getName(), message);
     	questionsService.getQuestion().setFinished(true);
+    	LOG.info("Question stopped [user={}, question={}, answers={}]", principal.getName(), message, questionsService.getQuestion().getAnswers());
     	return questionsService.getQuestion();
     }
     

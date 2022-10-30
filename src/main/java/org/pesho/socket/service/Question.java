@@ -17,7 +17,7 @@ public class Question {
 	public void addAnswer(String username, String answer) {
 		if (!answers.containsKey(username)) answers.put(username, answer);
 	}
-	
+
 	public String getQuestion() {
 		return question;
 	}
