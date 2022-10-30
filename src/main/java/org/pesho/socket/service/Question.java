@@ -1,7 +1,7 @@
 package org.pesho.socket.service;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Question {
 
@@ -11,7 +11,7 @@ public class Question {
 	
 	public Question(String question) {
 		this.question = question;
-		this.answers = new HashMap<>();
+		this.answers = new ConcurrentHashMap<>();
 	}
 	
 	public void addAnswer(String username, String answer) {
