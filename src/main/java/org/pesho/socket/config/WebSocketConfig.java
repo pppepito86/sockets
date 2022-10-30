@@ -88,7 +88,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 				StompHeaderAccessor inAccessor = StompHeaderAccessor.wrap(inMessage);
 				String receipt = inAccessor.getReceipt();
-				if (receipt == null || receipt.isBlank()) {
+				if (receipt == null || receipt.isEmpty()) {
 					return;
 				}
 
